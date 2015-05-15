@@ -11,7 +11,7 @@ _______
 
 Gemfile is included in root folder.
 
-Make sure to bundle gems before using HairTies:
+Make sure to bundle gems before using ConcertTracker:
 
     $ gem install bundler
     $ bundle
