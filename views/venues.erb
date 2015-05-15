@@ -1,0 +1,28 @@
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <h1>All Venues</h1>
+  </div>
+
+  <div class="col-sm-6" style="margin-top: 20px;">
+    <form action="/" method="get">
+      <button type="submit" class="btn btn-info">Home</button>
+    </form>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <div class="all_list">
+      <ul>
+        <% @all_venues.each do |venue| %>
+          <li><%= venue.name %> </a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>
