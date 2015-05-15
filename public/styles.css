@@ -1,0 +1,6 @@
+.jumbotron{
+  background-image: url(../img/concert.jpg);
+  background-position: 0% 25%;
+  background-size: cover;
+  color: white;
+}
