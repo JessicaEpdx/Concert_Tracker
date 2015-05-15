@@ -23,3 +23,8 @@ post('/bands/form') do
     erb(:error)
   end
 end
+
+get('/band/:id') do
+  @band = Band.find(params.fetch("id").to_i)
+  erb(:band)
+end
