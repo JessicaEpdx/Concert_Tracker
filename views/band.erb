@@ -17,11 +17,27 @@
 
 <div class="row">
 
-  <div class="col-sm-6">
+  <div class="col-sm-12">
     <form action="/bands" method="post">
       <input name="_method" type="hidden" value="delete">
       <input name="id" type="hidden" value="<%= @band.id%>">
       <button type="submit" class="btn btn-danger">Delete Band</button>
+    </form>
+  </div>
+
+</div>
+
+
+<br><br>
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <form action="/band/<%= @band.id %>" method="post">
+      <input name="_method" type="hidden" value="patch">
+      <h3>Update Band Name</h3>
+      <input name="name" type="text">
+      <button type="submit" class="btn btn-primary">Change Name</button>
     </form>
   </div>
 

@@ -35,3 +35,12 @@ delete('/bands') do
   @all_bands = Band.all()
   erb(:bands)
 end
+
+patch('/band/:id') do
+  @band = Band.find(params.fetch("id").to_i)
+  if @band.update({:name => params.fetch("name")})
+    redirect("/band/#{@band.id}")
+  else
+    erb(:error)
+  end
+end
