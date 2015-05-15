@@ -1,41 +1,41 @@
-<h1>Add a Band to list of Bands</h1>
-<div class="row" style="margin-top:30px;">
 
-  <div class="col-sm-2">
-    <form action="/bands/form" method="get">
-        <button type="submit" class="btn btn-warning" >Add a Band</button>
-    </form>
+  <h1 id="head_text">Add a Band</h1>
+
+  <div class="row" style="margin-top:30px;">
+
+    <div class="col-sm-3">
+      <form action="/bands/form" method="get">
+          <button type="submit" class="btn btn-warning" >Add a Band</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3">
+      <form action="/bands" method="get">
+          <button type="submit" class="btn btn-info">Find a Band</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3">
+      <form action="/venues/form" method="get">
+          <button type="submit" class="btn btn-warning">Add a Venue</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3">
+      <form action="/venues" method="get">
+          <button type="submit" class="btn btn-info">Venue List</button>
+      </form>
+    </div>
+
   </div>
 
-  <div class="col-sm-2">
-    <form action="/bands" method="get">
-        <button type="submit" class="btn btn-info">Find a Band</button>
-    </form>
-  </div>
-
-  <div class="col-sm-2">
-    <form action="/venues/form" method="get">
-        <button type="submit" class="btn btn-warning">Add a Venue</button>
-    </form>
-  </div>
-
-  <div class="col-sm-2">
-    <form action="/venues" method="get">
-        <button type="submit" class="btn btn-info">Venue List</button>
-    </form>
-  </div>
-
-</div>
-
-
-<div class="row" style="margin-top:30px;">
+<div class="row" style="margin-top:60px;">
 
   <div class="col-sm-12">
     <form action="/bands/form" method="post">
       <label for="name">Band Name</label>
       <input name="name" type="text" placeholder="ex: Radiohead">
-      <button type="submit" class="btn btn-warning">Add Band</button>
+      <button type="submit" class="btn btn-default">Add Band</button>
     </form>
   </div>
-
 </div>

@@ -1,84 +1,73 @@
-<div class="row">
+
+  <h1 id="head_text"><%= @band.name %></h1>
+
+  <div class="row" style="margin-top:30px;">
+
+    <div class="col-sm-3">
+      <form action="/bands/form" method="get">
+          <button type="submit" class="btn btn-warning" >Add a Band</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3">
+      <form action="/bands" method="get">
+          <button type="submit" class="btn btn-info">Find a Band</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3">
+      <form action="/venues/form" method="get">
+          <button type="submit" class="btn btn-warning">Add a Venue</button>
+      </form>
+    </div>
+
+    <div class="col-sm-3">
+      <form action="/venues" method="get">
+          <button type="submit" class="btn btn-info">Venue List</button>
+      </form>
+    </div>
+
+  </div>
+
+
+<div class="row" style="margin-top:50px;">
 
   <div class="col-sm-12">
-    <h1><%= @band.name %></h1>
-
-    <form action="/bands" method="post">
-      <input name="_method" type="hidden" value="delete">
-      <input name="id" type="hidden" value="<%= @band.id%>">
-      <button type="submit" class="btn btn-danger">Delete Band</button>
-    </form>
-
-  </div>
-
-</div>
+    <h3 style="margin-bottom:30px;">Update Band</h3>
+    <div class="form-group" style="margin-bottom:10px;">
+      <form action="/bands" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <input name="id" type="hidden" value="<%= @band.id%>">
+        <button type="submit" class="btn btn-danger">Delete Band</button>
+      </form>
+    </div>
 
 
-<br><br>
-
-<div class="row">
-
-  <div class="col-sm-2">
-    <form action="/bands/form" method="get">
-        <button type="submit" class="btn btn-warning" >Add a Band</button>
-    </form>
-  </div>
-
-  <div class="col-sm-2">
-    <form action="/bands" method="get">
-        <button type="submit" class="btn btn-info">Find a Band</button>
-    </form>
-  </div>
-
-  <div class="col-sm-2">
-    <form action="/venues/form" method="get">
-        <button type="submit" class="btn btn-warning">Add a Venue</button>
-    </form>
-  </div>
-
-  <div class="col-sm-2">
-    <form action="/venues" method="get">
-        <button type="submit" class="btn btn-info">Venue List</button>
-    </form>
-  </div>
-
-</div>
-
-
-<br><br>
-
-<div class="row">
-
-  <div class="col-sm-2">
     <form action="/band/<%= @band.id %>" method="post">
       <input name="_method" type="hidden" value="patch">
       <div class="form-group">
-      <h3>Update Band Name</h3>
+        <label for="name">New Band Name</label>
         <input name="name" type="text">
-      </div>
       <button type="submit" class="btn btn-primary">Change Name</button>
+      </div>
     </form>
   </div>
 
 </div>
 
 
-<br><br>
-
-
-<div class="row">
+<div class="row" style="margin-top:40px;">
 
   <div class="col-sm-6">
     <h3>Venues</h3>
     <form action="/band/<%= @band.id %>/venue" method="post">
       <div class="form-group">
         <% @all_venues.-(@venues_of_band).each do |venue| %>
-          <input type="checkbox" name="venue" value="<%= venue.id %>"> <%= venue.name %> <br>
+          <input type="radio" name="venue" value="<%= venue.id %>"> <%= venue.name %> <br>
         <% end %>
       </div>
       <button type="submit" class="btn btn-primary">Add Venue to <%= @band.name %> </button>
     </form>
-
   </div>
 
 
@@ -88,6 +77,4 @@
       <%= venue.name %>
     <% end %>
   </div>
-
-
 </div>

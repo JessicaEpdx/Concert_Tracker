@@ -1,11 +1,80 @@
-.all_list{
-  list-style-type:none;
+body{
+  background-color:#290000;
+}
+
+.jumbotron{
+  height:370px;
+  background-image: url("../img/band1.jpg");
+  background-position: 0% 30%;
+  background-repeat: no-repeat;
+  background-size:1200px;
+}
+
+#head_text{
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 400;
+  font-size:70px;
+  padding:30px;
+  padding-bottom:80px;
+  background: -webkit-linear-gradient(#FFFFFF, #F6EEEC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.all_list{
+  list-style-type: none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 25px;
 
 }
 
+.all_list li a{
+  color:#c33107;
+}
+
 .all_list li a:hover{
   text-decoration:none;
+  color:#cea99f;
+}
+
+.all_list li{
+  color:#cea99f;
+}
+
+.btn-info{
+  background-color:#c40707;
+  border: 2px solid #EC971F;
+}
+
+.btn-info:hover{
+  background-color:#a80d0d;
+  border:2px solid #EC971F;
+
+}
+
+.btn{
+  font-size:20px;
+  padding:10px;
+  outline:none;
+}
+
+label{
+  color:white;
+  font-size:20px;
+  padding-right:10px;
+
+}
+
+input{
+  margin-right:10px;
+  padding:4px;
+}
+
+.btn-default{
+  padding:5px;
+  font-size:15px;
+
+}
+
+textarea:focus, input:focus{
+    outline: 0;
 }
