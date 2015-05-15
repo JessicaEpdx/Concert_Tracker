@@ -1,27 +1,44 @@
 <div class="row">
 
-  <div class="col-sm-6">
+  <div class="col-sm-12">
     <h1><%= @band.name %></h1>
-  </div>
 
-  <div class="col-sm-6" style="margin-top:20px;">
-    <form action="/" method="get">
-      <button type="submit" class="btn btn-info">Home</button>
+    <form action="/bands" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <input name="id" type="hidden" value="<%= @band.id%>">
+      <button type="submit" class="btn btn-danger">Delete Band</button>
     </form>
+
   </div>
 
 </div>
 
 
-
+<br><br>
 
 <div class="row">
 
-  <div class="col-sm-12">
-    <form action="/bands" method="post">
-      <input name="_method" type="hidden" value="delete">
-      <input name="id" type="hidden" value="<%= @band.id%>">
-      <button type="submit" class="btn btn-danger">Delete Band</button>
+  <div class="col-sm-2">
+    <form action="/bands/form" method="get">
+        <button type="submit" class="btn btn-warning" >Add a Band</button>
+    </form>
+  </div>
+
+  <div class="col-sm-2">
+    <form action="/bands" method="get">
+        <button type="submit" class="btn btn-info">Find a Band</button>
+    </form>
+  </div>
+
+  <div class="col-sm-2">
+    <form action="/venues/form" method="get">
+        <button type="submit" class="btn btn-warning">Add a Venue</button>
+    </form>
+  </div>
+
+  <div class="col-sm-2">
+    <form action="/venues" method="get">
+        <button type="submit" class="btn btn-info">Venue List</button>
     </form>
   </div>
 
@@ -32,11 +49,13 @@
 
 <div class="row">
 
-  <div class="col-sm-6">
+  <div class="col-sm-2">
     <form action="/band/<%= @band.id %>" method="post">
       <input name="_method" type="hidden" value="patch">
+      <div class="form-group">
       <h3>Update Band Name</h3>
-      <input name="name" type="text">
+        <input name="name" type="text">
+      </div>
       <button type="submit" class="btn btn-primary">Change Name</button>
     </form>
   </div>

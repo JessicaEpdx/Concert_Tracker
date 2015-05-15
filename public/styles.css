@@ -1,6 +1,11 @@
-.jumbotron{
-  background-image: url(../img/concert.jpg);
-  background-position: 0% 25%;
-  background-size: cover;
-  color: white;
+.all_list{
+  list-style-type:none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+
+}
+
+.all_list li a:hover{
+  text-decoration:none;
 }
