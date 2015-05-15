@@ -37,6 +37,11 @@ WARNING this will clear ALL DATA and re-create databases:
     $ rake db:test:prepare
 
 
+To run program through Sinatra in a new Terminal window:
+
+    $ ruby app.rb
+
+
 ####Debug
 ________
 
