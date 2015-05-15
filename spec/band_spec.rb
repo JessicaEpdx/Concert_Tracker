@@ -7,4 +7,8 @@ describe Band do
     test_band2 = Band.new({:name => "Radiohead"})
     expect(test_band.update({:name => ""})).to(eq(false))
   end
+  it('ensures band name is title cased') do
+    test_band = Band.create({:name => "radiohead"})
+    expect(test_band.name()).to(eq("Radiohead"))
+  end
 end
