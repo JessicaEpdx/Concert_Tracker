@@ -28,3 +28,10 @@ get('/band/:id') do
   @band = Band.find(params.fetch("id").to_i)
   erb(:band)
 end
+
+delete('/bands') do
+  band = Band.find(params.fetch("id"))
+  band.delete
+  @all_bands = Band.all()
+  erb(:bands)
+end

@@ -1,9 +1,28 @@
-<h1>All Bands</h1>
 
-<div class="all_list">
-  <ul>
-    <% @all_bands.each do |band| %>
-      <li><a href="/band/<%= band.id %>"> <%= band.name %> </a></li>
-    <% end %>
-  </ul>
+<div class="row">
+
+  <div class="col-sm-6">
+    <h1>All Bands</h1>
+  </div>
+
+  <div class="col-sm-6" style="margin-top: 20px;">
+    <form action="/" method="get">
+      <button type="submit" class="btn btn-info">Home</button>
+    </form>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <div class="all_list">
+      <ul>
+        <% @all_bands.each do |band| %>
+          <li><a href="/band/<%= band.id %>"> <%= band.name %> </a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
 </div>

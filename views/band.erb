@@ -1,1 +1,28 @@
-<h1><%= @band.name %></h1>
+<div class="row">
+
+  <div class="col-sm-6">
+    <h1><%= @band.name %></h1>
+  </div>
+
+  <div class="col-sm-6" style="margin-top:20px;">
+    <form action="/" method="get">
+      <button type="submit" class="btn btn-info">Home</button>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <form action="/bands" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <input name="id" type="hidden" value="<%= @band.id%>">
+      <button type="submit" class="btn btn-danger">Delete Band</button>
+    </form>
+  </div>
+
+</div>
