@@ -53,7 +53,7 @@
     <h3>Venues</h3>
     <form action="/band/<%= @band.id %>/venue" method="post">
       <div class="form-group">
-        <% @all_venues.each do |venue| %>
+        <% @all_venues.-(@venues_of_band).each do |venue| %>
           <input type="checkbox" name="venue" value="<%= venue.id %>"> <%= venue.name %> <br>
         <% end %>
       </div>

@@ -72,7 +72,8 @@ post('/band/:id/venue') do
   @all_venues = Venue.all()
   @band = Band.find(params.fetch("id").to_i)
   venue = Venue.find(params.fetch("venue"))
-  @band.venues.push(venue)
-  @venues_of_band = @band.venues
-  erb(:band)
+  if @band.venues.push(venue)
+    redirect("/band/#{@band.id}")
+    @venues_of_band = @band.venues
+  end
 end
