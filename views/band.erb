@@ -33,7 +33,7 @@
 <div class="row" style="margin-top:50px;">
 
   <div class="col-sm-12">
-    <h3 style="margin-bottom:30px;">Update Band</h3>
+    <h3 style="margin-bottom:30px; color:white;">Update Band</h3>
     <div class="form-group" style="margin-bottom:10px;">
       <form action="/bands" method="post">
         <input name="_method" type="hidden" value="delete">
@@ -59,9 +59,9 @@
 <div class="row" style="margin-top:40px;">
 
   <div class="col-sm-6">
-    <h3>Venues</h3>
+    <h3 style="margin-bottom:30px; color:white;">Venues</h3>
     <form action="/band/<%= @band.id %>/venue" method="post">
-      <div class="form-group">
+      <div class="form-group" style="color:white; font-size:20px;">
         <% @all_venues.-(@venues_of_band).each do |venue| %>
           <input type="radio" name="venue" value="<%= venue.id %>"> <%= venue.name %> <br>
         <% end %>
@@ -72,9 +72,12 @@
 
 
   <div class="col-sm-6">
-    <h3><%= @band.name %> Has Played at</h3>
-    <% @venues_of_band.each do |venue| %>
-      <%= venue.name %>
-    <% end %>
+    <h3 style="margin-bottom:30px; color:white;"><%= @band.name %> Has Played at</h3>
+    <ul class="all_list">
+      <% @venues_of_band.each do |venue| %>
+        <li><%= venue.name %></li>
+      <% end %>
+  </ul>
   </div>
+
 </div>

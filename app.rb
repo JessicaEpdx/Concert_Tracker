@@ -16,8 +16,8 @@ get('/bands') do
 end
 
 post('/bands/form') do
-  new_band = Band.new({:name => params.fetch("name")})
-  if new_band.save
+  @new_band = Band.new({:name => params.fetch("name")})
+  if @new_band.save
     redirect('/bands')
   else
     erb(:error)

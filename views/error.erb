@@ -28,5 +28,17 @@
 
   </div>
 </div>
-  <h1 style="text-align:center;"> Add Bands and Venues<h1>
-  <h1 style="text-align:center;">Track where your favorite bands have played!</h1>
+
+<%if @new_band.!=(nil) %>
+  <% @new_band.errors().full_messages().each do |message| %>
+  <h2 style="color:white;">  <%= message%></h2>
+  <h3 style="color:white;"> Please try again </h3>
+  <% end %>
+<% end %>
+
+<%if @venue.!=(nil) %>
+  <% @venue.errors().full_messages().each do |message| %>
+  <h2 style="color:white;">  <%= message%></h2>
+  <h3 style="color:white;"> Please try again </h3>
+  <% end %>
+<% end %>
