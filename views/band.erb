@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="col-sm-6">
-    <h1><%= @band.name %> <%= @band.id %></h1>
+    <h1><%= @band.name %></h1>
   </div>
 
   <div class="col-sm-6" style="margin-top:20px;">
@@ -50,18 +50,24 @@
 <div class="row">
 
   <div class="col-sm-6">
-    <h5>Select Venues Where <%= @band.name %> Has Played</h5>
+    <h3>Venues</h3>
     <form action="/band/<%= @band.id %>/venue" method="post">
-      <% @all_venues.each do |venue| %>
-        <input type="checkbox" name="venue" value="<%= venue.id %>"> <%= venue.name %> <br>
-      <% end %>
-      <button type="submit">Add Venue to Band</button>
+      <div class="form-group">
+        <% @all_venues.each do |venue| %>
+          <input type="checkbox" name="venue" value="<%= venue.id %>"> <%= venue.name %> <br>
+        <% end %>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Venue to <%= @band.name %> </button>
     </form>
 
   </div>
 
 
   <div class="col-sm-6">
+    <h3><%= @band.name %> Has Played at</h3>
+    <% @venues_of_band.each do |venue| %>
+      <%= venue.name %>
+    <% end %>
   </div>
 
 
